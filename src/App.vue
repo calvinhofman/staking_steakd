@@ -1025,7 +1025,7 @@ console.log(this.fullBalanceOfToken)
 .sdxHeader {
 	display: flex;
 	background-color: #FD5A08;
-	height: 95px;
+	height: 80px;
 	width: 100%;
 	padding: 10px;
 }
@@ -1035,7 +1035,7 @@ console.log(this.fullBalanceOfToken)
 }
 
 .sdxHeaderLogo {
-	max-height: 75px;
+	max-height: 60px;
 	object-fit: scale-down;
 }
 
