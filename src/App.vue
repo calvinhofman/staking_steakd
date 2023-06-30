@@ -2,14 +2,14 @@
 	<div>
 
 		<div class="sdxHeader">
-			<div class="container mx-auto ">
+			<div class=" w-[1087px] mx-auto ">
 			<a href="https://www.steakd.com" class="sdxHeaderLink">
 				<img src="./images/Steakd_dashboard_logo_PNG.png" class="sdxHeaderLogo"/>
 			</a>
 		</div>
 		</div>
 
-	<div class="sm:px-0 mx-auto mt-12 container  ">
+	<div class="sm:px-0 mx-auto mt-12  w-[1087px]   ">
 		<div class="flex lg:flex-row  flex-col justify-between  items-center w-full lg:space-x-8 border-2 border-[#3396FF] py-4 px-4 rounded-lg bg-gray-100">
 			<div class="flex sm:flex-row  flex-col items-center  space-x-2 justify-center ">
 				<div class="mx-auto pl-0.5 w-12/12 flex justify-center">
@@ -143,7 +143,7 @@
 					<div
 						class="flex mt-4 text-white font-bold text-2xl flex-col sm:flex-row items-center justify-between space-x-0 space-y-4 sm:space-y-0 sm:space-x-4">
 						<button @click="resyncTokens" :disabled="!userWallet"
-							class="bg-[#66C0F6] py-6 px-4 rounded-xl w-full">
+							class="bg-[#66C0F6] py-3 px-4 rounded-xl w-full">
 							COMPOUND EARNED
 						</button>
 					</div>

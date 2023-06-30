@@ -2,7 +2,7 @@
 	<div>
 
 		<div class="sdxHeader">
-			<div class="container mx-auto ">
+			<div class="lg:container w-[1087px] mx-auto ">
 			<a href="https://www.steakd.com" class="sdxHeaderLink">
 				<img src="./images/Steakd_dashboard_logo_PNG.png" class="sdxHeaderLogo"/>
 			</a>
@@ -291,136 +291,7 @@
 		</div> -->
 	</div>
 
-	<div data-elementor-type="footer" data-elementor-id="27990" class="elementor elementor-27990 elementor-location-footer" data-elementor-post-type="elementor_library">
-								<footer class="elementor-section elementor-top-section elementor-element elementor-element-1cdf59 elementor-section-full_width elementor-hidden-mobile elementor-section-height-default elementor-section-height-default" data-id="1cdf59" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;_ha_eqh_enable&quot;:false}">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1b5b5e3a" data-id="1b5b5e3a" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-								<section class="elementor-section elementor-inner-section elementor-element elementor-element-2d084692 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2d084692" data-element_type="section" data-settings="{&quot;_ha_eqh_enable&quot;:false}">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-79000aec" data-id="79000aec" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-								<div class="elementor-element elementor-element-a0a511b elementor-hidden-mobile elementor-widget elementor-widget-image" data-id="a0a511b" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img width="1211" height="311" src="https://steakd.com/wp-content/uploads/2023/04/steakd_main-logo_invrt.png" class="attachment-full size-full wp-image-27992" alt="" loading="lazy" srcset="https://steakd.com/wp-content/uploads/2023/04/steakd_main-logo_invrt.png 1211w, https://steakd.com/wp-content/uploads/2023/04/steakd_main-logo_invrt-300x77.png 300w, https://steakd.com/wp-content/uploads/2023/04/steakd_main-logo_invrt-1024x263.png 1024w, https://steakd.com/wp-content/uploads/2023/04/steakd_main-logo_invrt-768x197.png 768w" sizes="(max-width: 1211px) 100vw, 1211px" />															</div>
-				</div>
-				<div class="elementor-element elementor-element-bfebb0f elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-image" data-id="bfebb0f" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img width="1211" height="311" src="https://steakd.com/wp-content/uploads/2023/04/steakd_main-logo_invrt.png" class="attachment-2048x2048 size-2048x2048 wp-image-27992" alt="" loading="lazy" srcset="https://steakd.com/wp-content/uploads/2023/04/steakd_main-logo_invrt.png 1211w, https://steakd.com/wp-content/uploads/2023/04/steakd_main-logo_invrt-300x77.png 300w, https://steakd.com/wp-content/uploads/2023/04/steakd_main-logo_invrt-1024x263.png 1024w, https://steakd.com/wp-content/uploads/2023/04/steakd_main-logo_invrt-768x197.png 768w" sizes="(max-width: 1211px) 100vw, 1211px" />															</div>
-				</div>
-					</div>
-		</div>
-							</div>
-		</section>
-				<section class="elementor-section elementor-inner-section elementor-element elementor-element-6d4c632c elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6d4c632c" data-element_type="section" data-settings="{&quot;_ha_eqh_enable&quot;:false}">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-e54761c" data-id="e54761c" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-								<div class="elementor-element elementor-element-c793321 elementor-widget elementor-widget-heading" data-id="c793321" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-			<p class="elementor-heading-title elementor-size-default">Trading tokens involves significant risks, including the possibility of losing some or all of your investment. The value of tokens can be highly volatile and can fluctuate rapidly due to various factors, such as market demand, regulatory changes, and technological developments. Before trading tokens, you should carefully consider your financial situation and investment objectives, as well as seek professional advice if necessary. It's important to only invest what you can afford to lose and to thoroughly research the tokens and the associated risks before making any decisions.</p>		</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-50147649" data-id="50147649" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-								<div class="elementor-element elementor-element-13293eb5 e-grid-align-right e-grid-align-mobile-center elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons" data-id="13293eb5" data-element_type="widget" data-widget_type="social-icons.default">
-				<div class="elementor-widget-container">
-		<div class="elementor-social-icons-wrapper elementor-grid">
-							<span class="elementor-grid-item">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-a229ff5" href="https://twitter.com/steakdtx" target="_blank">
-						<span class="elementor-screen-only">Twitter</span>
-						<i class="fab fa-twitter"></i>					</a>
-				</span>
-							<span class="elementor-grid-item">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-discord elementor-repeater-item-f95db8b" href="https://discord.gg/sP6Ag2hQxm" target="_blank">
-						<span class="elementor-screen-only">Discord</span>
-						<i class="fab fa-discord"></i>					</a>
-				</span>
-							<span class="elementor-grid-item">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-telegram-plane elementor-repeater-item-17012f2" href="https://t.me/SteakdSDX" target="_blank">
-						<span class="elementor-screen-only">Telegram-plane</span>
-						<i class="fab fa-telegram-plane"></i>					</a>
-				</span>
-							<span class="elementor-grid-item">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-819bb36" href="https://www.youtube.com/@Steakd" target="_blank">
-						<span class="elementor-screen-only">Youtube</span>
-						<i class="fab fa-youtube"></i>					</a>
-				</span>
-							<span class="elementor-grid-item">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-14972f9" href="http://www.instagram.com/steakdtx" target="_blank">
-						<span class="elementor-screen-only">Instagram</span>
-						<i class="fab fa-instagram"></i>					</a>
-				</span>
-							<span class="elementor-grid-item">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-1d1c459" href="http://www.facebook.com/steakdtx" target="_blank">
-						<span class="elementor-screen-only">Facebook</span>
-						<i class="fab fa-facebook"></i>					</a>
-				</span>
-					</div>
-				</div>
-				</div>
-					</div>
-		</div>
-							</div>
-		</section>
-					</div>
-		</div>
-							</div>
-		</footer>
-				<footer class="elementor-section elementor-top-section elementor-element elementor-element-904f9c4 elementor-section-full_width elementor-hidden-desktop elementor-hidden-tablet elementor-section-height-default elementor-section-height-default" data-id="904f9c4" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;_ha_eqh_enable&quot;:false}">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-be1ba75" data-id="be1ba75" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-								<div class="elementor-element elementor-element-01d9320 elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-image" data-id="01d9320" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img width="1211" height="311" src="https://steakd.com/wp-content/uploads/2023/04/steakd_main-logo_invrt.png" class="attachment-2048x2048 size-2048x2048 wp-image-27992" alt="" loading="lazy" srcset="https://steakd.com/wp-content/uploads/2023/04/steakd_main-logo_invrt.png 1211w, https://steakd.com/wp-content/uploads/2023/04/steakd_main-logo_invrt-300x77.png 300w, https://steakd.com/wp-content/uploads/2023/04/steakd_main-logo_invrt-1024x263.png 1024w, https://steakd.com/wp-content/uploads/2023/04/steakd_main-logo_invrt-768x197.png 768w" sizes="(max-width: 1211px) 100vw, 1211px" />															</div>
-				</div>
-				<div class="elementor-element elementor-element-69a5618 elementor-widget elementor-widget-heading" data-id="69a5618" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-			<p class="elementor-heading-title elementor-size-default">Trading tokens involves significant risks, including the possibility of losing some or all of your investment. The value of tokens can be highly volatile and can fluctuate rapidly due to various factors, such as market demand, regulatory changes, and technological developments. Before trading tokens, you should carefully consider your financial situation and investment objectives, as well as seek professional advice if necessary. It's important to only invest what you can afford to lose and to thoroughly research the tokens and the associated risks before making any decisions.</p>		</div>
-				</div>
-				<div class="elementor-element elementor-element-af69d89 e-grid-align-right e-grid-align-mobile-center elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons" data-id="af69d89" data-element_type="widget" data-widget_type="social-icons.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-social-icons-wrapper elementor-grid">
-							<span class="elementor-grid-item">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-a229ff5" href="https://twitter.com/steakdtx" target="_blank">
-						<span class="elementor-screen-only">Twitter</span>
-						<i class="fab fa-twitter"></i>					</a>
-				</span>
-							<span class="elementor-grid-item">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-discord elementor-repeater-item-f95db8b" href="https://discord.gg/sP6Ag2hQxm" target="_blank">
-						<span class="elementor-screen-only">Discord</span>
-						<i class="fab fa-discord"></i>					</a>
-				</span>
-							<span class="elementor-grid-item">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-telegram-plane elementor-repeater-item-17012f2" href="https://t.me/SteakdSDX" target="_blank">
-						<span class="elementor-screen-only">Telegram-plane</span>
-						<i class="fab fa-telegram-plane"></i>					</a>
-				</span>
-							<span class="elementor-grid-item">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-819bb36" href="https://www.youtube.com/@Steakd" target="_blank">
-						<span class="elementor-screen-only">Youtube</span>
-						<i class="fab fa-youtube"></i>					</a>
-				</span>
-							<span class="elementor-grid-item">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-14972f9" href="http://www.instagram.com/steakdtx" target="_blank">
-						<span class="elementor-screen-only">Instagram</span>
-						<i class="fab fa-instagram"></i>					</a>
-				</span>
-							<span class="elementor-grid-item">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-1d1c459" href="http://www.facebook.com/steakdtx" target="_blank">
-						<span class="elementor-screen-only">Facebook</span>
-						<i class="fab fa-facebook"></i>					</a>
-				</span>
-					</div>
-				</div>
-				</div>
-					</div>
-		</div>
-							</div>
-		</footer>
-						</div>
+
 
 	</div>
 </template>
