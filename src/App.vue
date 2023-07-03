@@ -51,7 +51,8 @@
 							<br /> TOTAL
 						</div>
 					</div>
-					<div class="relative flex items-center w-full  mb-4 mt-4 border-2 bg-white p-2 px-4 border-gray-400 rounded-lg">
+					<div class="desktop">
+						<div class="relative flex items-center w-full  mb-4 mt-4 border-2 bg-white p-2 px-4 border-gray-400 rounded-lg">
 						<img class="w-12 h-12" :src="tokenImage" alt="" srcset="">
 						<input type="text"
 							class=" px-3 py-2 text-xl focus:outline-none border-none font-bold focus:ring-2 focus:ring-blue-500 w-full"
@@ -63,6 +64,7 @@
 					</div>
 					<input type="range" class=" w-full" :value="sliderValue" min="0" @input="updateSliderValue"
 						:max="this.balanceOfToken" step="1">
+					</div>
 					<div class="flex flex-row items-center mb-6 w-full ">
 						<div class="buttons  flex flex-row  mt-2  mx-auto font-bold">
 							<button @click="setPercentage(25)"
@@ -918,6 +920,10 @@ padding-left: 25px;
 }
 
 
+.desktop{
+	padding: 0px 15px;
+}
+
 @media only screen and (max-width: 768px) {
 
 	.mobile{
@@ -928,6 +934,11 @@ padding-left: 25px;
 	padding: 0px 27px;
 
 }
+
+.desktop{
+	padding: 0px 0px;
+}
+
 
 }
 
