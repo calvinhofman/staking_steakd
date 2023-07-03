@@ -66,13 +66,13 @@
 					<div class="flex flex-row items-center mb-6 w-full ">
 						<div class="buttons  flex flex-row  mt-2  mx-auto font-bold">
 							<button @click="setPercentage(25)"
-								class="lg:px-4 px-1 py-2 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">25%</button>
+								class="sm:px-4 px-2 py-2 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">25%</button>
 							<button @click="setPercentage(50)"
-								class="lg:px-4 px-1 py-2 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">50%</button>
+								class="lg:px-4 px-2 py-2 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">50%</button>
 							<button @click="setPercentage(75)"
-								class="lg:px-4 px-1 py-2 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">75%</button>
+								class="lg:px-4 px-2 py-2 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">75%</button>
 							<button @click="setPercentage(100)"
-								class="lg:px-3 px-1 py-2 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">100%</button>
+								class="lg:px-3 px-2 py-2 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">100%</button>
 						</div>
 					</div>
 					<select id="lockedperiod" v-model="selectedLockPeriod" @change="handleSelectChange"
@@ -135,7 +135,7 @@
 				</div>
 
 				<div class="flex flex-col">
-					<div class="border-[0.1rem] border-gray-600 rounded-xl text-[#26AF1A] p-2 px-3 bg-white">
+					<div class="border-[0.16rem] border-gray-600 rounded-lg text-[#26AF1A] p-2 px-3 bg-white">
 						<span class="text-3xl font-bold">{{ viewUnpaidDividends !== undefined && viewUnpaidDividends !== 0 ?
 							formatNumber(viewUnpaidDividends) : 0 }}</span>
 					</div>
@@ -148,7 +148,7 @@
 					</div>
 					<div class="mt-8">
 						<p class="text-xl font-bold text-gray-500 ">TOTAL STAKED SDX</p>
-						<div class="border-2 bg-white py-2 border-gray-500 p-2 px-3 rounded-xl font-bold text-3xl text-gray-500">{{ formatNumber(stakedAmount) }}</div>
+						<div class="border-[0.16rem] bg-white py-2 border-gray-500 p-2 px-3 rounded-lg font-bold text-3xl text-gray-500">{{ formatNumber(stakedAmount) }}</div>
 						<div class="mt-4 text-base text-gray-500 font-semibold">
 
 							<template v-if="!(userWallet && viewUnpaidDividends)">
