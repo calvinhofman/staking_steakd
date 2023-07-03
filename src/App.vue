@@ -122,7 +122,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="lg:w-[31.8%] mt-6 px-4 lg:px-0">
+			<div class="lg:w-[31.8%] mt-8  px-4 sm:px-0">
 				<div class="text-2xl font-bold flex flex-row text-[#26AF1A]">
 					<p>Earned SDX REWARDS</p>
 					<div class="spin1"></div>
@@ -157,7 +157,7 @@
 								<span><p>END DATE:</p> {{ this.endDate }}</span>
 							</template>
 						</div>
-						<div class="mt-4  text-red-300 font-semibold">
+						<div class="mt-4  text-red-300 font-semibold text-sm">
 							<p>NOTE: If you withdraw before the period <br/> ends there will be a 1% fee.</p>
 						</div>
 						<div class="successAlert " id="alertBox">
