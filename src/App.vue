@@ -30,7 +30,7 @@
 		</div>
 
 		<div class="flex lg:flex-row flex-col pb-4 lg:space-x-4  bg-gray-100 mt-4 border-4 border-gray-200 rounded-lg">
-			<div class="lg:w-[39%] pl-2.5">
+			<div class="lg:w-[39%] mobile_extra">
 				<p class="font-bold text-2xl text-center">STAKE OR WITHDRAW</p>
 				<div class="flex  flex-col py-4 px-4 border-gray-300 bg-[#E6E6E6] border-2 rounded-2xl  pt-10 lg:h-[35.6rem]">
 					<div class="flex lg:flex-row lg:text-xl  mx-auto items-center lg:space-x-3">
@@ -51,7 +51,7 @@
 							<br /> TOTAL
 						</div>
 					</div>
-					<div class="relative flex items-center w-full  mb-4 mt-4 border-2 bg-white p-4 border-gray-400 rounded-lg">
+					<div class="relative flex items-center w-full  mb-4 mt-4 border-2 bg-white p-2 px-4 border-gray-400 rounded-lg">
 						<img class="w-12 h-12" :src="tokenImage" alt="" srcset="">
 						<input type="text"
 							class=" px-3 py-2 text-xl focus:outline-none border-none font-bold focus:ring-2 focus:ring-blue-500 w-full"
@@ -96,7 +96,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="lg:w-3/12 ">
+			<div class="lg:w-3/12 mobile">
 				<p class="font-bold text-2xl invisible text-center">nftamount</p>
 
 				<div class="flex flex-col px-4 border-gray-300 border-2 rounded-2xl">
@@ -122,7 +122,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="lg:w-[31.8%] mt-8  px-4 sm:px-0">
+			<div class="lg:w-[31.8%] mt-8  mobile">
 				<div class="text-xl font-bold flex flex-row text-[#26AF1A]">
 					<p class="mt-1">Earned SDX REWARDS</p>
 					<div class="spin1"></div>
@@ -909,5 +909,26 @@ console.log(this.fullBalanceOfToken)
 }
 
 
+.mobile{
+	padding: 0px 0px;
+}
+
+.mobile_extra{
+padding-left: 25px;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+	.mobile{
+	padding: 0px 27px!important;
+}
+
+.mobile_extra{
+	padding: 0px 27px;
+
+}
+
+}
 
 </style>
