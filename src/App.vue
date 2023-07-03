@@ -122,7 +122,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="lg:w-[31.8%] mt-6">
+			<div class="lg:w-[31.8%] mt-6 px-4 lg:px-0">
 				<div class="text-2xl font-bold flex flex-row text-[#26AF1A]">
 					<p>Earned SDX REWARDS</p>
 					<div class="spin1"></div>
