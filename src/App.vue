@@ -109,7 +109,7 @@
 						<p>CURRENT SDX THAT <br /> QUALIFIES FOR BONUS 4% </p>
 					</div>
 					<div
-						class="border-2 border-[#26AF1A] rounded-lg text-center px-4  bg-white font-bold text-gray-400 pb-1 text-3xl">
+						class="border-[.09rem] border-[#26AF1A] rounded-lg text-center px-4  bg-white font-bold text-gray-400 pb-1 text-3xl">
 						<span>{{ formatNumber(this.nftBonusAmount) }}</span>
 					</div>
 					<div
@@ -135,7 +135,7 @@
 				</div>
 
 				<div class="flex flex-col">
-					<div class="border-[0.16rem] border-gray-600 rounded-lg text-[#26AF1A] p-2 px-3 bg-white">
+					<div class="border-[.09rem] border-gray-600 rounded-lg text-[#26AF1A] p-2 px-3 bg-white">
 						<span class="text-3xl font-bold">{{ viewUnpaidDividends !== undefined && viewUnpaidDividends !== 0 ?
 							formatNumber(viewUnpaidDividends) : 0 }}</span>
 					</div>
@@ -148,7 +148,7 @@
 					</div>
 					<div class="mt-8">
 						<p class="text-xl font-bold text-gray-500 ">TOTAL STAKED SDX</p>
-						<div class="border-[0.16rem] bg-white py-2 border-gray-500 p-2 px-3 rounded-lg font-bold text-3xl text-gray-500">{{ formatNumber(stakedAmount) }}</div>
+						<div class="border-[.09rem] bg-white py-2 border-gray-500 p-2 px-3 rounded-lg font-bold text-3xl text-gray-500">{{ formatNumber(stakedAmount) }}</div>
 						<div class="mt-4 text-base text-gray-500 font-semibold">
 
 							<template v-if="!(userWallet && viewUnpaidDividends)">
