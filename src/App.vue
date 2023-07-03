@@ -109,7 +109,7 @@
 						<p>CURRENT SDX THAT <br /> QUALIFIES FOR BONUS 4% </p>
 					</div>
 					<div
-						class="border-2 border-[#26AF1A] rounded-xl text-center px-4  bg-white font-bold text-gray-400 pb-1 text-3xl">
+						class="border-2 border-[#26AF1A] rounded-lg text-center px-4  bg-white font-bold text-gray-400 pb-1 text-3xl">
 						<span>{{ formatNumber(this.nftBonusAmount) }}</span>
 					</div>
 					<div
