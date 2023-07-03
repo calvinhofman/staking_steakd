@@ -123,8 +123,8 @@
 				</div>
 			</div>
 			<div class="lg:w-[31.8%] mt-8  px-4 sm:px-0">
-				<div class="text-2xl font-bold flex flex-row text-[#26AF1A]">
-					<p>Earned SDX REWARDS</p>
+				<div class="text-xl font-bold flex flex-row text-[#26AF1A]">
+					<p class="mt-1">Earned SDX REWARDS</p>
 					<div class="spin1"></div>
 					<!-- <div class="spinner mt-[.4rem]">
 						<div class="dot dot1"></div>
@@ -135,20 +135,20 @@
 				</div>
 
 				<div class="flex flex-col">
-					<div class="border-[0.1rem] border-gray-600 rounded-xl text-[#26AF1A] p-4 bg-white">
+					<div class="border-[0.1rem] border-gray-600 rounded-xl text-[#26AF1A] p-2 px-3 bg-white">
 						<span class="text-3xl font-bold">{{ viewUnpaidDividends !== undefined && viewUnpaidDividends !== 0 ?
 							formatNumber(viewUnpaidDividends) : 0 }}</span>
 					</div>
 					<div
 						class="flex mt-4 text-white font-bold text-2xl flex-col sm:flex-row items-center justify-between space-x-0 space-y-4 sm:space-y-0 sm:space-x-4">
 						<button @click="resyncTokens" :disabled="!userWallet"
-							class="bg-[#66C0F6] py-3 px-4 rounded-xl w-full">
+							class="bg-[#66C0F6] py-3 px-2 rounded-xl w-full">
 							COMPOUND EARNED
 						</button>
 					</div>
 					<div class="mt-8">
-						<p class="text-2xl font-bold text-gray-500 ">TOTAL STAKED SDX</p>
-						<div class="border-2 bg-white py-4 border-gray-500 p-4 rounded-xl font-bold text-3xl text-gray-500">{{ formatNumber(stakedAmount) }}</div>
+						<p class="text-xl font-bold text-gray-500 ">TOTAL STAKED SDX</p>
+						<div class="border-2 bg-white py-2 border-gray-500 p-2 px-3 rounded-xl font-bold text-3xl text-gray-500">{{ formatNumber(stakedAmount) }}</div>
 						<div class="mt-4 text-base text-gray-500 font-semibold">
 
 							<template v-if="!(userWallet && viewUnpaidDividends)">
