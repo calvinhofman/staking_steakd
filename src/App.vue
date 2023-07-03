@@ -30,7 +30,7 @@
 		</div>
 
 		<div class="flex lg:flex-row flex-col pb-4 lg:space-x-4  bg-gray-100 mt-4 border-4 border-gray-200 rounded-lg">
-			<div class="lg:w-[39%] ">
+			<div class="lg:w-[39%] pl-2.5">
 				<p class="font-bold text-2xl text-center">STAKE OR WITHDRAW</p>
 				<div class="flex  flex-col py-4 px-4 border-gray-300 bg-[#E6E6E6] border-2 rounded-2xl  pt-10 lg:h-[35.6rem]">
 					<div class="flex lg:flex-row lg:text-xl  mx-auto items-center lg:space-x-3">
@@ -86,11 +86,11 @@
 					<div
 						class="flex mt-4 text-white font-bold text-2xl flex-col sm:flex-col items-center justify-between  space-y-4 w-10/12 mx-auto">
 						<button @click="stakeTokens" :disabled="!userWallet"
-							class="bg-[#FD5A08] w-full p-2 px-4 rounded-xl align-middle pb-3 uppercase">
+							class="bg-[#FD5A08] w-full p-2 px-4 rounded-xl align-middle py-3 uppercase">
 							Stake
 						</button>
 						<button @click="unstakeTokens" :disabled="!userWallet"
-							class="bg-[#26AF1A] w-full p-2 px-4 rounded-xl align-middle pb-3 uppercase">
+							class="bg-[#26AF1A] w-full p-2 px-4 rounded-xl align-middle py-3 uppercase">
 							Withdraw
 						</button>
 					</div>
@@ -100,22 +100,22 @@
 				<p class="font-bold text-2xl invisible text-center">nftamount</p>
 
 				<div class="flex flex-col px-4 border-gray-300 border-2 rounded-2xl">
-					<img class="w-[13rem] mx-auto" src="https://steakdincredibulls.com/images/cow.png" alt="">
+					<img class="w-[12.8rem] mx-auto" src="https://steakdincredibulls.com/images/cow.png" alt="">
 					<p class="text-center font-bold text-lg">INCREDIBULLS NFTs <br /> IN WALLET</p>
 					<div
 						class="text-6xl mt-2 text-orange-500 text-center font-bold border-2 border-gray-400 rounded-lg bg-white w-4/12 mx-auto pb-2">
 						{{ nftCount }}</div>
-					<div class="text-[#26AF1A] mb-2 text-center font-bold mt-4">
+					<div class="text-[#26AF1A] mb-2 text-sm text-center font-bold mt-4">
 						<p>CURRENT SDX THAT <br /> QUALIFIES FOR BONUS 4% </p>
 					</div>
 					<div
-						class="border-2 border-[#26AF1A] rounded-lg text-center px-4  bg-white font-bold text-gray-400 pb-1 text-3xl">
+						class="border-2 border-[#26AF1A] rounded-xl text-center px-4  bg-white font-bold text-gray-400 pb-1 text-3xl">
 						<span>{{ formatNumber(this.nftBonusAmount) }}</span>
 					</div>
 					<div
 						class="flex my-10 text-white font-bold text-xl flex-col sm:flex-col items-center justify-between  w-12/12 mx-auto">
 						<div class="text-white w-full mx-auto">
-							<a class=" bg-gray-400 p-4 rounded-lg" target="_blank" href="https://steakd.com/incredibulls/">ADD MORE
+							<a class=" bg-gray-400 p-3 rounded-xl" target="_blank" href="https://steakd.com/incredibulls/">ADD MORE
 								NFTs</a>
 						</div>
 
@@ -135,7 +135,7 @@
 				</div>
 
 				<div class="flex flex-col">
-					<div class="border-[0.1rem] border-gray-600 rounded-lg text-[#26AF1A] p-4 bg-white">
+					<div class="border-[0.1rem] border-gray-600 rounded-xl text-[#26AF1A] p-4 bg-white">
 						<span class="text-3xl font-bold">{{ viewUnpaidDividends !== undefined && viewUnpaidDividends !== 0 ?
 							formatNumber(viewUnpaidDividends) : 0 }}</span>
 					</div>
@@ -148,7 +148,7 @@
 					</div>
 					<div class="mt-8">
 						<p class="text-2xl font-bold text-gray-500 ">TOTAL STAKED SDX</p>
-						<div class="border-2 bg-white py-4 border-gray-500 p-4 rounded-lg font-bold text-3xl text-gray-500">{{ formatNumber(stakedAmount) }}</div>
+						<div class="border-2 bg-white py-4 border-gray-500 p-4 rounded-xl font-bold text-3xl text-gray-500">{{ formatNumber(stakedAmount) }}</div>
 						<div class="mt-4 text-base text-gray-500 font-semibold">
 
 							<template v-if="!(userWallet && viewUnpaidDividends)">
