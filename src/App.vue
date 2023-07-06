@@ -3,7 +3,7 @@
 		<div class="sdxHeader">
 			<div class=" w-[1087px] mx-auto ">
 			<a href="https://www.steakd.com" class="sdxHeaderLink">
-				<img src="./images/Steakd_dashboard_logo_PNG.png" class="sdxHeaderLogo"/>
+				<img src="./images/Steakd_dashboard_logo_PNG.png" class="sdxHeaderLogo mt-2.5 lg:mt-2"/>
 			</a>
 		</div>
 		</div>
@@ -14,16 +14,16 @@
 				<div class="mx-auto pl-0.5 w-12/12 flex justify-center">
 					<w3m-core-button></w3m-core-button>
 				</div>
-			<div class=" flex flex-row space-x-2 font-bold text-lg sm:text-xl  justify-center items-center">
+			<div class=" flex flex-row space-x-2 font-bold text-sm sm:text-xl  justify-center items-center">
 				<p>Status:</p>
 				<p :class="{'text-[#3396FF]': userWallet !== null, 'text-red-500 ': userWallet === null}">
     {{ userWallet !== null ? 'CONNECTED' : 'NOT CONNECTED' }}
   </p>
 			</div>
 			</div>
-			<div class="flex flex-rw w-12/12 space-x-2 justify-center text-lg sm:text-xl "> <span class="font-semibold">SDX Balance:</span><span> {{
+			<div class="flex flex-rw w-12/12 space-x-2 justify-center text-sm sm:text-xl "> <span class="font-semibold">SDX Balance:</span><span> {{
 				formatNumber(fullBalanceOfToken.toString()) }}</span></div>
-			<div class="flex flex-rw w-12/12 space-x-2 justify-center text-lg sm:text-xl"><span class="font-semibold">Currently staking at: {{ totalAPR !== null ?
+			<div class="flex flex-rw w-12/12 space-x-2 justify-center text-sm sm:text-xl"><span class="font-semibold">Currently staking at: {{ totalAPR !== null ?
 				totalAPR : 0 }}%
 					APR</span>
 				</div>
@@ -33,7 +33,7 @@
 			<div class="lg:w-[39%] mobile_extra">
 				<p class="font-bold text-2xl text-center">STAKE OR WITHDRAW</p>
 				<div class="flex  flex-col py-4 px-4 border-gray-300 bg-[#E6E6E6] border-2 rounded-2xl  pt-10 lg:h-[35.6rem]">
-					<div class="flex lg:flex-row lg:text-xl  mx-auto items-center lg:space-x-3">
+					<div class="flex lg:flex-row lg:text-xl text-[1rem]  mx-auto items-center lg:space-x-3">
 						<div
 							class="border-[.13rem]  rounded-lg border-[#26AF1A] bg-white text-[#26AF1A] px-2 lg:px-6 py-2 font-bold  text-center">
 							{{ lockAPRsFront !== undefined && lockAPRsFront !== 0 ? `${lockAPRsFront}%` : `7% ` }} <br />
@@ -960,8 +960,8 @@ font-size: 15px;
 	}
 
 .mobilepercentage{
-padding: 0px 5px;
-font-size: 11px;
+padding: 0px 10.5px;
+font-size: 14px;
 }
 
 .font_size{
@@ -990,7 +990,26 @@ height: 30px;
 }
 
 
+@media only screen and (max-width: 360px) {
+
+.mobilepercentage{
+padding: 0px 8px;
+font-size: 11px;
+}
+
+}
+
+@media only screen and (max-width: 320px) {
+
+.mobilepercentage{
+padding: 0px 7px;
+font-size: 9px;
+}
+
+}
+
 @media only screen and (max-width: 290px) {
+
 
 
 .mobilepercentage{
