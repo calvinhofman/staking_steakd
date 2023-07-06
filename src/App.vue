@@ -55,10 +55,10 @@
 						<div class="relative flex items-center w-full  mb-4 mt-4 border-2 bg-white p-2 px-[0.6rem] border-gray-400 rounded-lg">
 						<img class="w-12 h-12" :src="tokenImage" alt="" srcset="">
 						<input type="text"
-							class=" px-3 py-2 text-xl focus:outline-none border-none font-bold focus:ring-2 focus:ring-blue-500 w-full"
+							class=" px-3 py-2 input_mobile focus:outline-none border-none font-bold focus:ring-2 focus:ring-blue-500 w-full"
 							v-model="amount" @input="handleInputChange" />
 						<button @click="handleMaxAmountClick"
-							class="px-4 py-2 rounded-r-lg text-2xl font-semibold text-gray-400 absolute right-0 top-0 bottom-0 focus:outline-none focus:ring-2 focus:ring-blue-500">
+							class="px-4 py-2 rounded-r-lg input_mobile font-semibold text-gray-400 absolute right-0 top-0 bottom-0 focus:outline-none focus:ring-2 focus:ring-blue-500">
 							MAX
 						</button>
 					</div>
@@ -111,8 +111,8 @@
 						<p>CURRENT SDX THAT <br /> QUALIFIES FOR BONUS 4% </p>
 					</div>
 					<div
-						class="border-[.09rem] border-[#26AF1A] rounded-lg text-center px-4  bg-white font-bold text-gray-400 pb-1 text-3xl">
-						<span>{{ formatNumber(this.nftBonusAmount) }}</span>
+						class="border-[.09rem] border-[#26AF1A] rounded-lg text-center px-4 py-2 bg-white font-bold text-gray-400 pb-1 text-xl">
+						<span >{{ formatNumber(this.nftBonusAmount) }}</span>
 					</div>
 					<div
 						class="flex my-10 text-white font-bold text-xl flex-col sm:flex-col items-center justify-between  w-12/12 mx-auto">
@@ -925,6 +925,11 @@ padding: 0px 10px;
 }
 
 
+.input_mobile{
+	font-size: 1.25rem/* 20px */;
+    line-height: 1.75rem/* 28px */;
+}
+
 
 @media only screen and (max-width: 768px) {
 
@@ -957,12 +962,19 @@ font-size: 11px;
 }
 
 .font_size{
-font-size: 9px;
+font-size: 10px;
 }
 
 .font_custom{
 font-size: 12px;
 }
+
+
+.input_mobile{
+	font-size: 0.5rem/* 20px */;
+    line-height: .75rem/* 28px */;
+}
+
 
 }
 
