@@ -52,7 +52,7 @@
 						</div>
 					</div>
 					<div class="desktop">
-						<div class="relative flex items-center w-full  mb-4 mt-4 border-2 bg-white p-2 px-4 border-gray-400 rounded-lg">
+						<div class="relative flex items-center w-full  mb-4 mt-4 border-2 bg-white p-2 px-[0.6rem] border-gray-400 rounded-lg">
 						<img class="w-12 h-12" :src="tokenImage" alt="" srcset="">
 						<input type="text"
 							class=" px-3 py-2 text-xl focus:outline-none border-none font-bold focus:ring-2 focus:ring-blue-500 w-full"
@@ -68,17 +68,17 @@
 					<div class="flex flex-row items-center mb-6 w-full ">
 						<div class="buttons  flex flex-row  mt-2  mx-auto font-bold">
 							<button @click="setPercentage(25)"
-								class="sm:px-4 px-2 py-2 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">25%</button>
+								class="mobilepercentage py-2 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">25%</button>
 							<button @click="setPercentage(50)"
-								class="lg:px-4 px-2 py-2 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">50%</button>
+								class="mobilepercentage py-2 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">50%</button>
 							<button @click="setPercentage(75)"
-								class="lg:px-4 px-2 py-2 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">75%</button>
+								class="mobilepercentage py-2 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">75%</button>
 							<button @click="setPercentage(100)"
-								class="lg:px-3 px-2 py-2 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">100%</button>
+								class="mobilepercentage py-2 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">100%</button>
 						</div>
 					</div>
 					<select id="lockedperiod" v-model="selectedLockPeriod" @change="handleSelectChange"
-						class="bg-gray-50 selecter border-[.09rem] text-base border-red-400  text-gray-900 rounded-lg focus:ring-blue-500 focus:border-red-400 block w-10/12 mx-auto p-2.5 dark:bg-white dark:border-red-400 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-red-400">
+						class="bg-gray-50 selecter border-[.09rem] font_size border-red-400  text-gray-900 rounded-lg focus:ring-blue-500 focus:border-red-400 block w-10/12 mx-auto p-2.5 dark:bg-white dark:border-red-400 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-red-400">
 						<option value="" disabled selected>Select period (6 or 12 months)</option>
 
 						<option value="6">6 months</option>
@@ -88,11 +88,11 @@
 					<div
 						class="flex mt-4 text-white font-bold text-2xl flex-col sm:flex-col items-center justify-between  space-y-4 w-10/12 mx-auto">
 						<button @click="stakeTokens" :disabled="!userWallet"
-							class="bg-[#FD5A08] w-full p-2 px-4 rounded-xl align-middle py-3 uppercase">
+							class="bg-[#FD5A08] w-full button p-2 px-4 rounded-xl align-middle py-3 uppercase">
 							Stake
 						</button>
 						<button @click="unstakeTokens" :disabled="!userWallet"
-							class="bg-[#26AF1A] w-full p-2 px-4 rounded-xl align-middle py-3 uppercase">
+							class="bg-[#26AF1A] w-full button p-2 px-4 rounded-xl align-middle py-3 uppercase">
 							Withdraw
 						</button>
 					</div>
@@ -117,7 +117,7 @@
 					<div
 						class="flex my-10 text-white font-bold text-xl flex-col sm:flex-col items-center justify-between  w-12/12 mx-auto">
 						<div class="text-white w-full mx-auto">
-							<a class=" bg-gray-400 p-3 rounded-xl" target="_blank" href="https://steakd.com/incredibulls/">ADD MORE
+							<a class=" bg-gray-400 p-3 rounded-xl button" target="_blank" href="https://steakd.com/incredibulls/">ADD MORE
 								NFTs</a>
 						</div>
 
@@ -136,7 +136,7 @@
 					</div> -->
 				</div>
 
-				<div class="flex flex-col">
+				<div class="flex flex-col pr-[0.5em]">
 					<div class="border-[.09rem] border-gray-600 rounded-lg text-[#26AF1A] p-2 px-3 bg-white">
 						<span class="text-3xl font-bold">{{ viewUnpaidDividends !== undefined && viewUnpaidDividends !== 0 ?
 							formatNumber(viewUnpaidDividends) : 0 }}</span>
@@ -159,7 +159,7 @@
 								<span><p>END DATE:</p> {{ this.endDate }}</span>
 							</template>
 						</div>
-						<div class="mt-4  text-red-300 font-semibold text-sm">
+						<div class="mt-4  text-red-300 font-semibold font_custom ">
 							<p>NOTE: If you withdraw before the period <br/> ends there will be a 1% fee.</p>
 						</div>
 						<div class="successAlert " id="alertBox">
@@ -920,9 +920,11 @@ padding-left: 25px;
 }
 
 
-.desktop{
-	padding: 0px 15px;
+.mobilepercentage{
+padding: 0px 10px;
 }
+
+
 
 @media only screen and (max-width: 768px) {
 
@@ -935,10 +937,51 @@ padding-left: 25px;
 
 }
 
-.desktop{
-	padding: 0px 0px;
+.mobilepercentage{
+padding: 0px 5px;
 }
 
+.font_size{
+font-size: 15px;
+}
+
+}
+
+
+@media only screen and (max-width: 426px) {
+
+
+.mobilepercentage{
+padding: 0px 5px;
+font-size: 11px;
+}
+
+.font_size{
+font-size: 9px;
+}
+
+.font_custom{
+font-size: 12px;
+}
+
+}
+
+
+@media only screen and (max-width: 290px) {
+
+
+.mobilepercentage{
+padding: 0px 5px;
+font-size: 7px;
+}
+
+.font_size{
+font-size: 6px;
+}
+
+.button{
+font-size: 15px;
+}
 
 }
 
