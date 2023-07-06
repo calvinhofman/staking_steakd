@@ -9,7 +9,7 @@
 		</div>
 
 	<div class="sm:px-0 mx-auto mt-12 lg:w-[1087px]  ">
-		<div class="flex lg:flex-row  flex-col justify-between  items-center w-full lg:space-x-8 border-2 border-[#3396FF] py-4 px-4 rounded-lg bg-gray-100">
+		<div class="flex lg:flex-row mx-auto  flex-col justify-between items-center custom_width lg:space-x-8 border-2 border-[#3396FF] py-4 px-4 rounded-lg bg-gray-100">
 			<div class="flex sm:flex-row  flex-col items-center  space-x-2 justify-center ">
 				<div class="mx-auto pl-0.5 w-12/12 flex justify-center">
 					<w3m-core-button></w3m-core-button>
@@ -53,12 +53,12 @@
 					</div>
 					<div class="desktop">
 						<div class="relative flex items-center w-full  mb-4 mt-4 border-2 bg-white p-2 px-[0.6rem] border-gray-400 rounded-lg">
-						<img class="w-12 h-12" :src="tokenImage" alt="" srcset="">
+						<img class="w-12 h-12 imageinput" :src="tokenImage" alt="" srcset="">
 						<input type="text"
 							class=" px-3 py-2 input_mobile focus:outline-none border-none font-bold focus:ring-2 focus:ring-blue-500 w-full"
 							v-model="amount" @input="handleInputChange" />
 						<button @click="handleMaxAmountClick"
-							class="px-4 py-2 rounded-r-lg input_mobile font-semibold text-gray-400 absolute right-0 top-0 bottom-0 focus:outline-none focus:ring-2 focus:ring-blue-500">
+							class="px-4 py-2 rounded-r-lg input_mobile_gone font-semibold text-gray-400 absolute right-0 top-0 bottom-0 focus:outline-none focus:ring-2 focus:ring-blue-500">
 							MAX
 						</button>
 					</div>
@@ -955,6 +955,9 @@ font-size: 15px;
 
 @media only screen and (max-width: 426px) {
 
+	.custom_width{
+		width: 85%;
+	}
 
 .mobilepercentage{
 padding: 0px 5px;
@@ -971,10 +974,18 @@ font-size: 12px;
 
 
 .input_mobile{
-	font-size: 0.5rem/* 20px */;
-    line-height: .75rem/* 28px */;
+	font-size: 0.9rem/* 20px */;
+    line-height: 1rem/* 28px */;
 }
 
+.input_mobile_gone{
+	display: none;
+}
+
+.imageinput{
+width: 30px;
+height: 30px;
+}
 
 }
 
