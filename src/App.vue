@@ -781,7 +781,7 @@ export default {
 				const price = Number(this.price); // Convert the string to a number
 				const quantity = Number(this.quantity); // Convert the string to a number
 				const { hash } = await writeContract({
-					address: this.bullAddress,
+					address: this.nftAddr,
 					abi: nftABI,
 					functionName: 'mintNFT',
 					args: [this.userWallet, this.quantity],
