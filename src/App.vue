@@ -42,7 +42,8 @@
 								class="border-[.13rem]  rounded-lg border-[#26AF1A] bg-white text-[#26AF1A] px-2 lg:px-6 py-2 font-bold  text-center">
 								{{ lockAPRsFront !== undefined && lockAPRsFront !== 0 ? `${lockAPRsFront}%` : `7% ` }}
 								<br />
-								APR</div>
+								APR
+							</div>
 							<p class="text-xl font-extrabold text-[#26AF1A]">+</p>
 							<div
 								class="border-[.13rem] rounded-lg border-[#26AF1A] bg-white text-[#26AF1A] px-1 py-2 font-bold  text-center">
@@ -132,19 +133,22 @@
 										</button>
 									</div>
 									<div v-else>
-										<button @click="handleClick" class="bg-[#FD5A08] my-1 p-1 rounded-xl w-full text-white">
+										<button @click="handleClick"
+											class="bg-[#FD5A08] my-1 p-1 rounded-xl w-full text-white">
 											MINT NFT <br>
 											{{ formattedPrice }}
 										</button>
 										<!-- Display a message or alternative content when the condition is not met -->
-										<p v-if="!this.userWallet" class="text-center text-[red] text-base">Please connect your
+										<p v-if="!this.userWallet" class="text-center text-[red] text-base">Please connect
+											your
 											wallet to Mint</p>
-										<p v-if="this.bnbAmount " class="text-center text-[red] text-base">Insufficient BNB balance</p>
+										<p v-if="this.bnbAmount" class="text-center text-[red] text-base">Insufficient BNB
+											balance</p>
 									</div>
 
-									<div class="flex flex-row mx-auto justify-center items-center border-2 border-gray-400 my-2 rounded-xl py-2">
-											<img class="w-[5rem]"
-												src="https://steakdincredibulls.com/images/cow.png" alt="">
+									<div
+										class="flex flex-row mx-auto justify-center items-center border-2 border-gray-400 my-2 rounded-xl py-2">
+										<img class="w-[5rem]" src="https://steakdincredibulls.com/images/cow.png" alt="">
 										<div class="flex flex-col">
 											<div class="text-base ">INCREDIBULLS <br> MINTED</div>
 											<div class="text-[#fd5a08] text-base">
@@ -154,15 +158,15 @@
 									</div>
 									<h4 class="text-lg text-center">INCREDIBULLS NFTs IN YOUR WALLET</h4>
 									<div
-						class="text-6xl mt-1 text-orange-500 text-center font-bold border-2 border-gray-400 rounded-lg bg-white w-4/12 mx-auto pb-2">
-						{{ nftCount }}</div>
-					<div class="text-[#26AF1A] mb-1 text-sm text-center font-bold mt-4">
-						<p>CURRENT SDX THAT <br /> QUALIFIES FOR BONUS 4% </p>
-					</div>
-					<div
-						class="border-[.09rem] mb-4 border-[#26AF1A] rounded-lg text-center px-4 py-2 bg-white font-bold text-gray-400 pb-1 text-base">
-						<span >{{ formatNumber(this.nftBonusAmount) }}</span>
-					</div>
+										class="text-6xl mt-1 text-orange-500 text-center font-bold border-2 border-gray-400 rounded-lg bg-white w-4/12 mx-auto pb-2">
+										{{ nftCount }}</div>
+									<div class="text-[#26AF1A] mb-1 text-sm text-center font-bold mt-4">
+										<p>CURRENT SDX THAT <br /> QUALIFIES FOR BONUS 4% </p>
+									</div>
+									<div
+										class="border-[.09rem] mb-4 border-[#26AF1A] rounded-lg text-center px-4 py-2 bg-white font-bold text-gray-400 pb-1 text-base">
+										<span>{{ formatNumber(this.nftBonusAmount) }}</span>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -370,7 +374,7 @@ import tokenImage from './images/Steakd_Logo_Coin-500x500-1.png'
 /* wallet connect config */
 import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
 import { Web3Modal } from '@web3modal/html'
-import { configureChains, createConfig, writeContract, readContract, waitForTransaction, watchAccount,fetchBalance } from '@wagmi/core'
+import { configureChains, createConfig, writeContract, readContract, waitForTransaction, watchAccount, fetchBalance } from '@wagmi/core'
 
 import { bsc } from '@wagmi/core/chains'
 
@@ -472,23 +476,23 @@ export default {
 		},
 	},
 	watch: {
-    quantitywithprice(newValue, oldValue) {
-		console.log(this.bnbAmount)
+		quantitywithprice(newValue, oldValue) {
+			console.log(this.bnbAmount)
 			console.log(this.quantitywithprice)
-      console.log('quantitywithprice changed:', newValue);
-      this.updateShowMintButton();
-    },
-    bnbAmount(newValue, oldValue) {
-      console.log('bnbAmount changed:', newValue);
-      this.updateShowMintButton();
-    },
-    quantity(newValue, oldValue) {
-      // This will be called whenever `quantity` changes
-      console.log('quantity changed:', newValue);
-      // Perform any desired action here, such as updating the price based on the new quantity
-      this.updatePrice();
-    },
-  },
+			console.log('quantitywithprice changed:', newValue);
+			this.updateShowMintButton();
+		},
+		bnbAmount(newValue, oldValue) {
+			console.log('bnbAmount changed:', newValue);
+			this.updateShowMintButton();
+		},
+		quantity(newValue, oldValue) {
+			// This will be called whenever `quantity` changes
+			console.log('quantity changed:', newValue);
+			// Perform any desired action here, such as updating the price based on the new quantity
+			this.updatePrice();
+		},
+	},
 	methods: {
 		showAlertBox(alertType, setMessage) {
 			this.alertMessage = setMessage;
@@ -759,30 +763,32 @@ export default {
 		},
 
 		async updatePrice() {
-		this.price = await readContract({
-			address: nftAddr,
-			abi: nftABI,
-			functionName: 'mintPrice',
-			// You can pass the updated quantity as an argument if necessary
-			arguments: [this.quantity],
-		});
-		this.quantitywithprice = (this.price.toString() * this.quantity) / Math.pow(10, 18);
-		console.log(this.quantitywithprice)
+			this.price = await readContract({
+				address: nftAddr,
+				abi: nftABI,
+				functionName: 'mintPrice',
+				// You can pass the updated quantity as an argument if necessary
+				arguments: [this.quantity],
+			});
+			this.quantitywithprice = (this.price.toString() * this.quantity) / Math.pow(10, 18);
+			console.log(this.quantitywithprice)
 		},
 
+
 		async handleClick() {
+
 			try {
-		const price = Number(this.price); // Convert the string to a number
-        const quantity = Number(this.quantity); // Convert the string to a number
-        const { hash } = await writeContract({
-          address: this.bullAddress,
-          abi: nftABI,
-          functionName: 'mintNFT',
-          args: [this.userWallet, this.quantity],
-          value: (price * quantity).toString(),
-        })
-        // Contract execution succeeded, open the modal
-        this.nftAmount = this.nftCount + this.quantity
+				const price = Number(this.price); // Convert the string to a number
+				const quantity = Number(this.quantity); // Convert the string to a number
+				const { hash } = await writeContract({
+					address: this.bullAddress,
+					abi: nftABI,
+					functionName: 'mintNFT',
+					args: [this.userWallet, this.quantity],
+					value: (price * quantity).toString(),
+				})
+				// Contract execution succeeded, open the modal
+				this.nftAmount = this.nftCount + this.quantity
 			} catch (error) {
 				console.log(this.quantity)
 				console.log(this.price)
@@ -790,10 +796,11 @@ export default {
 				console.log(error)
 			}
 		},
+
 		updateShowMintButton() {
-      console.log('Updating showMintButton');
-      this.$forceUpdate();
-    },
+			console.log('Updating showMintButton');
+			this.$forceUpdate();
+		},
 	}
 };
 </script>
@@ -1125,7 +1132,7 @@ export default {
 }
 
 
-.margin-mobile{
+.margin-mobile {
 	margin: 0px 0px;
 }
 
@@ -1148,9 +1155,9 @@ export default {
 		font-size: 15px;
 	}
 
-	.margin-mobile{
-	margin: 20px 0px;
-}
+	.margin-mobile {
+		margin: 20px 0px;
+	}
 
 }
 
