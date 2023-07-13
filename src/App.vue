@@ -139,7 +139,7 @@
 										<!-- Display a message or alternative content when the condition is not met -->
 										<p v-if="!this.userWallet" class="text-center text-[red] text-base">Please connect your
 											wallet to Mint</p>
-										<p v-else class="text-center text-[red] text-base">Insufficient BNB balance</p>
+										<p v-if="this.bnbAmount " class="text-center text-[red] text-base">Insufficient BNB balance</p>
 									</div>
 
 									<div class="flex flex-row mx-auto justify-center items-center border-2 border-gray-400 my-2 rounded-xl py-2">
@@ -160,7 +160,7 @@
 						<p>CURRENT SDX THAT <br /> QUALIFIES FOR BONUS 4% </p>
 					</div>
 					<div
-						class="border-[.09rem] mb-4 border-[#26AF1A] rounded-lg text-center px-4 py-2 bg-white font-bold text-gray-400 pb-1 text-xl">
+						class="border-[.09rem] mb-4 border-[#26AF1A] rounded-lg text-center px-4 py-2 bg-white font-bold text-gray-400 pb-1 text-base">
 						<span >{{ formatNumber(this.nftBonusAmount) }}</span>
 					</div>
 								</div>
@@ -370,7 +370,7 @@ import tokenImage from './images/Steakd_Logo_Coin-500x500-1.png'
 /* wallet connect config */
 import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
 import { Web3Modal } from '@web3modal/html'
-import { configureChains, createConfig, writeContract, readContract, waitForTransaction, watchAccount } from '@wagmi/core'
+import { configureChains, createConfig, writeContract, readContract, waitForTransaction, watchAccount,fetchBalance } from '@wagmi/core'
 
 import { bsc } from '@wagmi/core/chains'
 
@@ -437,6 +437,7 @@ export default {
 			bnbAmount: 0,
 			quantitywithprice: 0,
 			account: '',
+			bnbbalance: '',
 		};
 	},
 	created() {
@@ -457,6 +458,7 @@ export default {
 	},
 	computed: {
 		showMintButton() {
+
 			return this.quantitywithprice <= this.bnbAmount;
 		},
 		formattedPrice() {
@@ -471,6 +473,8 @@ export default {
 	},
 	watch: {
     quantitywithprice(newValue, oldValue) {
+		console.log(this.bnbAmount)
+			console.log(this.quantitywithprice)
       console.log('quantitywithprice changed:', newValue);
       this.updateShowMintButton();
     },
@@ -524,6 +528,11 @@ export default {
 			console.log(get_nftCounts.toString())
 
 
+			const balance = await fetchBalance({
+				address: this.userWallet,
+			})
+			this.bnbbalance = balance
+			console.log(this.bnbbalance)
 
 			if (this.userWallet > 0) {
 
@@ -763,9 +772,22 @@ export default {
 
 		async handleClick() {
 			try {
-				console.log(quantity)
+		const price = Number(this.price); // Convert the string to a number
+        const quantity = Number(this.quantity); // Convert the string to a number
+        const { hash } = await writeContract({
+          address: this.bullAddress,
+          abi: nftABI,
+          functionName: 'mintNFT',
+          args: [this.userWallet, this.quantity],
+          value: (price * quantity).toString(),
+        })
+        // Contract execution succeeded, open the modal
+        this.nftAmount = this.nftCount + this.quantity
 			} catch (error) {
+				console.log(this.quantity)
+				console.log(this.price)
 
+				console.log(error)
 			}
 		},
 		updateShowMintButton() {
