@@ -113,7 +113,7 @@
 						<div class="flex flex-col justify-start font-semibold text-2xl mx-auto">
 							<div class="mt-4 text-[#FD5A08]">
 								Quantity
-								<input class="w-12 text-center border-[.09rem] border-[#FD5A08] text-black" type="number"
+								<input class="w-12 text-center border-[.09rem] border-[#FD5A08] text-black" type="number" min="1"
 									v-model="quantity" />
 							</div>
 
@@ -125,25 +125,12 @@
 									<div class=" text-base text-gray-400 font-normal text-center mt-2 mb-1">
 										Each NFT is .3 BNB
 									</div>
-									<div class="mx-auto flex justify-center" v-if="quantitywithprice <= bnbAmount">
-										<button @click="handleClick"
+									<div class="mx-auto flex justify-center">
+										<button @click="handleClick" :disabled="!userWallet"
 											class="bg-[#FD5A08] px-4 py-1 my-1 rounded-xl w-full text-xl text-white">
 											MINT NFT <br>
 											{{ formattedPrice }}
 										</button>
-									</div>
-									<div v-else>
-										<button @click="handleClick"
-											class="bg-[#FD5A08] my-1 p-1 rounded-xl w-full text-white">
-											MINT NFT <br>
-											{{ formattedPrice }}
-										</button>
-										<!-- Display a message or alternative content when the condition is not met -->
-										<p v-if="!this.userWallet" class="text-center text-[red] text-base">Please connect
-											your
-											wallet to Mint</p>
-										<p v-if="this.bnbAmount" class="text-center text-[red] text-base">Insufficient BNB
-											balance</p>
 									</div>
 
 									<div
@@ -170,38 +157,12 @@
 								</div>
 							</div>
 						</div>
-						<!-- <img class="w-[5.8rem] mx-auto" src="https://steakdincredibulls.com/images/cow.png" alt="">
-					<p class="text-center font-bold text-lg">INCREDIBULLS NFTs <br /> IN WALLET</p>
-					<div
-						class="text-6xl mt-2 text-orange-500 text-center font-bold border-2 border-gray-400 rounded-lg bg-white w-4/12 mx-auto pb-2">
-						{{ nftCount }}</div>
-					<div class="text-[#26AF1A] mb-2 text-sm text-center font-bold mt-4">
-						<p>CURRENT SDX THAT <br /> QUALIFIES FOR BONUS 4% </p>
-					</div>
-					<div
-						class="border-[.09rem] border-[#26AF1A] rounded-lg text-center px-4 py-2 bg-white font-bold text-gray-400 pb-1 text-xl">
-						<span >{{ formatNumber(this.nftBonusAmount) }}</span>
-					</div>
-					<div
-						class="flex my-10 text-white font-bold text-xl flex-col sm:flex-col items-center justify-between  w-12/12 mx-auto">
-						<div class="text-white w-full mx-auto">
-							<a class=" bg-gray-400 p-3 rounded-xl button" target="_blank" href="https://steakd.com/incredibulls/">ADD MORE
-								NFTs</a>
-						</div>
-
-					</div> -->
 					</div>
 				</div>
 				<div class="lg:w-[31.8%] mt-8  mobile">
 					<div class="text-xl font-bold flex flex-row text-[#26AF1A]">
 						<p class="mt-1">Earned SDX REWARDS</p>
 						<div class="spin1"></div>
-						<!-- <div class="spinner mt-[.4rem]">
-						<div class="dot dot1"></div>
-						<div class="dot dot2"></div>
-						<div class="dot dot3"></div>
-						<div class="dot dot4"></div>
-					</div> -->
 					</div>
 
 					<div class="flex flex-col pr-[0.5em]">
@@ -243,126 +204,6 @@
 					</div>
 				</div>
 			</div>
-
-			<!-- <div class="flex flex-col md:flex-row justify-between space-y-8 md:space-y-0 md:space-x-8 mt-4 mx-auto">
-			<div id="card" class="border-4 rounded-xl border-blue w-full md:w-12/12 bg-gray-100">
-				<div class="flex flex-row md:flex-row justify-between items-center space-x-4 p-6">
-					<div class="text-black text-center">
-						<p class="text-3xl font-bold">Staking period:</p>
-						<span class="text-[#ff742e] text-3xl font-bold uppercase">
-							{{ selectedValue }} months
-						</span>
-					</div>
-					<div class="text-[#2EAA23] px-6 text-xl rounded-xl font-bold border-2 border-[#38C12C] text-center">
-						<span>
-							{{ lockAPRsFront !== undefined && lockAPRsFront !== 0 ? `${lockAPRsFront}%` : `7%` }}
-						</span>
-						<p class="">APR</p>
-						<div></div>
-					</div>
-				</div>
-				<div class="px-6">
-					<div class="text-black w-full border-2 rounded-xl border-gray-400 bg-white p-4">
-						<p class="text-center text-2xl font-bold">
-							STAKE OR WITHDRAW
-						</p>
-						<div class="mt-2">
-							<div class="flex flex-col px-2 sm:px-16">
-								<div class="relative flex items-stretch w-full mb-4">
-									<input type="text"
-										class="border border-gray-300 px-3 py-2 text-xl rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
-										v-model="amount" @input="handleInputChange" />
-									<button @click="handleMaxAmountClick"
-										class="px-4 py-2 rounded-r-lg absolute right-0 top-0 bottom-0 focus:outline-none focus:ring-2 focus:ring-blue-500">
-										Max
-									</button>
-								</div>
-								<div class="flex flex-col items-center my-4 w-full">
-									<input type="range" class=" w-full" :value="sliderValue" min="0" @input="updateSliderValue"
-						:max="this.balanceOfToken" step="1">
-									<div class="buttons w-full flex flex-row justify-between mt-4 px-10 mx-auto">
-										<button @click="setPercentage(25)"
-											class="px-6 py-2 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">25%</button>
-										<button @click="setPercentage(50)"
-											class="px-6 py-2 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">50%</button>
-									</div>
-									<div class="buttons w-full flex flex-row justify-between mt-4 px-10 mx-auto">
-										<button @click="setPercentage(75)"
-											class="px-6 py-2 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">75%</button>
-										<button @click="setPercentage(100)"
-											class="px-5 py-2 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">100%</button>
-									</div>
-								</div>
-								<div>
-									<select id="lockedperiod" v-model="selectedLockPeriod" @change="handleSelectChange"
-										class="bg-gray-50 border text-2xl border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500">
-										<option value="" disabled selected>Select period</option>
-
-										<option value="6">6 months</option>
-										<option value="12">12 months</option>
-									</select>
-								</div>
-							</div>
-							<div
-								class="flex mt-4 text-white font-bold text-2xl flex-col sm:flex-row items-center justify-between space-x-0 space-y-4 sm:space-y-0 sm:space-x-4">
-								<button @click="stakeTokens" :disabled="!userWallet"
-									class="bg-[#FD5A08] w-full p-2 px-4 rounded-xl">
-									Stake
-								</button>
-								<button @click="unstakeTokens" :disabled="!userWallet"
-									class="bg-[#48CF3C] w-full p-2 px-4 rounded-xl">
-									Withdraw
-								</button>
-							</div>
-							<div
-								class="flex mt-4 text-white font-bold text-2xl flex-col sm:flex-row items-center justify-between space-x-0 space-y-4 sm:space-y-0 sm:space-x-4">
-								<button @click="resyncTokens" :disabled="!userWallet"
-									class="bg-[#66C0F6]	p-2 px-4 rounded-xl w-full">
-									Compound
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="px-6 mb-6 mt-8">
-					<div class="text-black px-4 border-2 border-gray-400 bg-white rounded-xl p-4">
-						<p class="text-center text-2xl font-semibold uppercase">
-							Pending rewards:
-						</p>
-						<div class="my-2 px-2 sm:px-16">
-							<div
-								class="flex justify-center flex-row items-center space-x-4 p-4 border-2 rounded-xl border-gray-400">
-								<p class="text-xl font-semibold">
-									<span class="mr-2">
-										{{ viewUnpaidDividends !== undefined && viewUnpaidDividends !== 0 ?
-											formatNumber(viewUnpaidDividends) : 0 }}
-									</span>
-									SDX TOKENS
-								</p>
-							</div>
-							<div class="flex flex-row justify-between">
-								<p>locked amount:</p>
-								<p>{{ formatNumber(stakedAmount) }}</p>
-							</div>
-							<div v-if="nftCount != 0">
-								<div class="flex flex-row justify-between">
-									<p>NFTs:</p>
-									<p>{{ nftCount }}</p>
-								</div>
-								<div class="flex flex-row justify-between">
-									<p>{{ formatNumber(this.nftBonusAmount) }}</p>
-									<p> qualify for bonus 4%</p>
-								</div>
-							</div>
-							<div v-if="endDate !== null" class="flex flex-row justify-between">
-								<p>end date:</p>
-								<p>{{ this.endDate }} </p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
 		</div>
 	</div>
 </template>
@@ -432,6 +273,7 @@ export default {
 			sliderValue: 0,
 			fullBalanceOfToken: 0,
 			alertMessage: "Alert Box",
+			lockAPRsFrontTotal: 0,
 			quantity: 0,
 			price: 0,
 			count: null,
@@ -477,18 +319,18 @@ export default {
 	},
 	watch: {
 		quantitywithprice(newValue, oldValue) {
-			console.log(this.bnbAmount)
-			console.log(this.quantitywithprice)
-			console.log('quantitywithprice changed:', newValue);
+			// console.log(this.bnbAmount)
+			// console.log(this.quantitywithprice)
+			// console.log('quantitywithprice changed:', newValue);
 			this.updateShowMintButton();
 		},
 		bnbAmount(newValue, oldValue) {
-			console.log('bnbAmount changed:', newValue);
+			// console.log('bnbAmount changed:', newValue);
 			this.updateShowMintButton();
 		},
 		quantity(newValue, oldValue) {
 			// This will be called whenever `quantity` changes
-			console.log('quantity changed:', newValue);
+			// console.log('quantity changed:', newValue);
 			// Perform any desired action here, such as updating the price based on the new quantity
 			this.updatePrice();
 		},
@@ -529,16 +371,13 @@ export default {
 			let get_nftCounts = await nftContract.methods.nftCount().call();
 			this.maxTokenID = get_maxTokenID.toString();
 			this.nftCounts = get_nftCounts.toString();
-			console.log(get_nftCounts.toString())
-
-
-			const balance = await fetchBalance({
-				address: this.userWallet,
-			})
-			this.bnbbalance = balance
-			console.log(this.bnbbalance)
+			// console.log(get_nftCounts.toString())
 
 			if (this.userWallet > 0) {
+				const balance = await fetchBalance({
+					address: this.userWallet,
+				})
+				this.bnbbalance = balance.value.toString()
 
 				let get_nftCount = await nftContract.methods.balanceOf(this.userWallet).call();
 				let get_bonusThreshold = await stakingContract.methods.bonusThreshold().call();
@@ -576,7 +415,7 @@ export default {
 				if (get_userLock[2]) {
 
 					const date = new Date(get_userLock[2].toString() * 1000);
-					console.log(date)
+					// console.log(date)
 					const options = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
 					const formattedDate = date.toLocaleString('en-US', options);
 					this.endDate = formattedDate.toString();
@@ -664,7 +503,7 @@ export default {
 		handleSelectChange(event) {
 			const newValue = event.target.value;
 			this.selectedValue = newValue;
-			console.log(this.lockAPRs)
+			// console.log(this.lockAPRs)
 			if (newValue === "6") {
 				if (this.nftCount > 0) {
 					this.lockAPRsFront = this.lockAPRs[2].toString()
@@ -700,13 +539,31 @@ export default {
 		},
 
 		async stakeTokens() {
+			let stakeAmount = Web3.utils.toWei(this.amount.toString().replace(/,/g, ''), 'ether');
+			let trueMax = await tokenContract.methods.getUserUnstaked(this.userWallet).call();
+
+			if(this.selectedValue < 6) {
+				this.showAlertBox("error", "You must select a staking period");
+				return;				
+			}
+
+			if(trueMax == 0) {
+				this.showAlertBox("error", "You do not have any tokens available to stake");
+				return;
+			}
+
+			if (stakeAmount > trueMax) {
+				stakeAmount = trueMax;
+			}
+
+			if(Number(stakeAmount) < 1) {
+				this.showAlertBox('error', "Amount to stake must be greater than 0");
+				return;
+			}
+
 			this.showAlertBox('process', 'PROCESSING. PLEASE CHECK YOUR CRYPTO WALLET');
+
 			try {
-				let stakeAmount = Web3.utils.toWei(this.amount.replace(/,/g, ''), 'ether');
-				let trueMax = await tokenContract.methods.getUserUnstaked(this.userWallet).call();
-				if (stakeAmount > trueMax) {
-					stakeAmount = trueMax;
-				}
 				const { hash } = await writeContract({
 					address: stakingAddr,
 					abi: stakingABI,
@@ -716,7 +573,7 @@ export default {
 				const data = await waitForTransaction({ confirmations: 2, hash, })
 				this.showAlertBox('success', 'Staking was successful');
 
-				console.log("Stake successful:", hash);
+				// console.log("Stake successful:", hash);
 				this.getuserInfo();
 			} catch (error) {
 				console.error("Stake failed:", error);
@@ -725,7 +582,15 @@ export default {
 		},
 
 		async unstakeTokens() {
+			let stakedTokens = await stakingContract.methods.getUserStaked(this.userWallet).call();
+
+			if(stakedTokens == 0) {
+				this.showAlertBox("error", "You do not have any staked tokens");
+				return;
+			}
+
 			this.showAlertBox('process', 'PROCESSING. PLEASE CHECK YOUR CRYPTO WALLET');
+
 			try {
 				const { hash } = await writeContract({
 					address: stakingAddr,
@@ -735,7 +600,7 @@ export default {
 				const data = await waitForTransaction({ confirmations: 1, hash, })
 				this.showAlertBox('success', 'Withdraw was successful');
 
-				console.log("Stake successful:", hash);
+				// console.log("Stake successful:", hash);
 				this.getuserInfo();
 			} catch (error) {
 				console.error("Stake failed:", error);
@@ -744,7 +609,15 @@ export default {
 		},
 
 		async resyncTokens() {
+			let stakedTokens = await stakingContract.methods.getUserStaked(this.userWallet).call();
+
+			if(stakedTokens == 0) {
+				this.showAlertBox("error", "You do not have any staked tokens");
+				return;
+			}
+
 			this.showAlertBox('process', 'PROCESSING. PLEASE CHECK YOUR CRYPTO WALLET');
+
 			try {
 				const { hash } = await writeContract({
 					address: stakingAddr,
@@ -754,7 +627,7 @@ export default {
 				const data = await waitForTransaction({ confirmations: 1, hash, })
 				this.showAlertBox('success', 'Compounding was successful');
 
-				console.log("Stake successful:", hash);
+				// console.log("Stake successful:", hash);
 				this.getuserInfo();
 			} catch (error) {
 				console.error("Stake failed:", error);
@@ -771,34 +644,49 @@ export default {
 				arguments: [this.quantity],
 			});
 			this.quantitywithprice = (this.price.toString() * this.quantity) / Math.pow(10, 18);
-			console.log(this.quantitywithprice)
+			// console.log(this.quantitywithprice)
 		},
 
 
 		async handleClick() {
+			const price = Number(this.price); // Convert the string to a number
+			const quantity = Number(this.quantity); // Convert the string to a number
+			const totalPrice = (price * quantity).toString();
+			if(this.quantity < 1) {
+				this.showAlertBox('error', 'Mint Quantity cannot be 0');
+				return;
+			}
+			if(Number(totalPrice) > Number(this.bnbbalance)) {
+				this.showAlertBox('error', 'Not enough BNB in your wallet');
+				return;
+			}
 
+			this.showAlertBox('process', 'PROCESSING. PLEASE CHECK YOUR CRYPTO WALLET');
+
+			// console.log(totalPrice)
 			try {
-				const price = Number(this.price); // Convert the string to a number
-				const quantity = Number(this.quantity); // Convert the string to a number
 				const { hash } = await writeContract({
-					address: this.nftAddr,
+					address: nftAddr,
 					abi: nftABI,
 					functionName: 'mintNFT',
 					args: [this.userWallet, this.quantity],
-					value: (price * quantity).toString(),
+					value: totalPrice,
 				})
+				const data = await waitForTransaction({ confirmations: 1, hash, })
+				this.showAlertBox('success', 'Mint NFT was successful');
+				
 				// Contract execution succeeded, open the modal
 				this.nftAmount = this.nftCount + this.quantity
 			} catch (error) {
-				console.log(this.quantity)
-				console.log(this.price)
-
-				console.log(error)
+				// console.log(this.quantity)
+				// console.log(this.price)
+				// console.log(error)
+				this.showAlertBox('error', 'An error has occured');
 			}
 		},
 
 		updateShowMintButton() {
-			console.log('Updating showMintButton');
+			// console.log('Updating showMintButton');
 			this.$forceUpdate();
 		},
 	}
